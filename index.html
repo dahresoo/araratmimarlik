@@ -1,0 +1,321 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yukarı / Aşağı Git Butonları</title>
+<style>
+  /* Sayfa uzun olsun diye örnek */
+  body {
+    height: 2000px;
+    background: linear-gradient(white, lightblue);
+    font-family: Arial, sans-serif;
+  }
+
+  /* Butonların genel görünümü */
+  .scroll-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* senin için sağda */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+  }
+
+  .scroll-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+
+  .scroll-buttons button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+  <div class="scroll-buttons">
+    <button id="toTop">↑ Yukarı Git</button>
+    <button id="toBottom">↓ Aşağı Git</button>
+  </div>
+
+<script>
+  document.getElementById("toTop").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.getElementById("toBottom").addEventListener("click", () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
+
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ararat Mimarlık</title>
+<style>
+/* Temel Reset */
+* { margin: 10px; padding:0; box-sizing:border-box; font-family: 'Times New Roman', Times, serif, sans-serif; }
+body { background-color:#ca5858; color:#fff; scroll-behavior: smooth; }
+a { color:#00f; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/* Menü */
+nav { position:fixed; top:0; width:100%; background-color:#e50000; padding:10px 0; z-index:1000; display:flex; align-items:center; justify-content:center; gap:30px; }
+nav img { height:50px; margin-right:20px; }
+nav ul { list-style:none; display:flex; gap:30px; align-items:center; }
+nav ul li a { color:#fff; font-weight:bold; padding:5px 10px; transition:0.3s; }
+nav ul li a:hover { color:#f00; }
+
+/* Bölümler */
+section { padding:100px 20px; min-height:100vh; }
+#anasayfa { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background-color:#7a788afe; }
+#anasayfa h1 { font-size:3em; margin-bottom:20px; color:#f00; }
+#anasayfa p { font-size:1.5em; margin-bottom:30px; color:#fff; }
+.btn { background-color:#f00; color:#faea42d4; padding:12px 25px; border:none; cursor:pointer; font-size:1em; transition:0.3s; border-radius:5px; }
+.btn:hover { background-color:#fff; color:#f00; }
+
+/* Hakkımızda & Hizmetler & Projeler */
+h2 { font-size:2em; margin-bottom:20px; color:#f00; text-align:center; }
+.hizmetler-grid, .projeler-grid { display:flex; flex-wrap:wrap; gap:20px;margin: 10px; justify-content:center; }
+.hizmetler-grid div, .projeler-grid div { background-color:#c40000; padding:20px; border-radius:10px; flex:1 1 250px; text-align:center; margin:10px; transition:0.3s; }
+.hizmetler-grid div:hover, .projeler-grid div:hover { background-color:#bd0000; margin: 5px; transform:translateY(-5px); }
+
+/* İletişim Formu */
+form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:15px; }
+input, textarea { padding:10px; border-radius:5px; border:none; }
+input[type="submit"] { background-color:#f00; color:#fff; cursor:pointer; font-weight:bold; }
+input[type="submit"]:hover { background-color:#fff; color:#f00; }
+
+/* Responsive */
+    
+@media(max-width:768px){ nav ul { flex-direction:column; align-items:center;padding: 10px 0; } nav img { margin-bottom:10px;height: 40px;}nav ul { flex-direction: column;  gap:15px; } }
+@media(max-width:768px){ form { width: 100%;padding: 0 10px; } input, textarea { width: 100%; } }
+@media(max-width:768px){ #anasayfa h1{ font-size: 2.5em; } 
+                        #anasayfa p{ font-size: 1.2em; } .btn{padding: 10px 20px; font-size: 0.9em;} }
+@media(max-width:768px)                        
+{ .hizmetler-grid div, .projeler-grid div { flex:1 1 100%; } }
+</style>
+</head>
+<body>
+    <script src="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html"></script>
+  
+
+
+<!-- Menü -->
+<nav>
+    
+    <img src="https://github.com/dahresoo/araratmimarlik/blob/main/6f36ccab-5a69-4ae9-a4d6-8ba4be72b5e3.jpg" alt="Ararat Mimarlık Logo"
+    
+    
+    <ul>
+        <li><a href="#anasayfa">Ana Sayfa</a></li>
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#hizmetler">Hizmetler</a></li>
+        <li><a href="#projeler">Projeler</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+</nav>
+
+<!-- Ana Sayfa -->
+<section id="anasayfa">
+    <h1>Ararat Mimarlık</h1>
+    <p>Profesyonel Mimarlık Çözümleri</p>
+    <button class="btn" onclick="document.getElementById('hakkimizda').scrollIntoView()">Hakkımızda</button>
+    <button class="btn" onclick="document.getElementById('hizmetler').scrollIntoView()">Hizmetler</button>
+</section>
+
+<!-- Hakkımızda -->
+<section id="hakkimizda">
+    <h2>Hakkımızda</h2>
+    <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ararat Mimarlık - Hakkımızda</title>
+    
+    <style>
+        /* Ana konteyner (div) stilimiz */
+        .hakkimizda-metin-kutusu {
+            /* Metnin yatayda ortalanmasını sağlar */
+            text-align: center; 
+            
+            /* İçeriğin çok yayılmasını engeller, okunurluğu artırır */
+            max-width: 800px; 
+            
+            /* Kutuyu sayfanın ortasına hizalar (margin: auto ile birlikte) */
+            margin: 40px auto; 
+            
+            /* Hafif iç boşluk (isteğe bağlı) */
+            padding: 20px; 
+            
+            /* Arka plan rengi (isteğe bağlı) */
+            background-color: #f9f9f9; 
+            
+            /* Hafif bir kenarlık (isteğe bağlı) */
+            border-radius: 8px;
+        }
+
+        /* Tüm başlıkları (h1, h2, h3, vb.) sola hizala */
+        /* Eğer başlıkları da ortada isterseniz bu kısmı silin. */
+        .hakkimizda-metin-kutusu h1,
+        .hakkimizda-metin-kutusu h2,
+        .hakkimizda-metin-kutusu h3 {
+            text-align: left; 
+            color: #1a5e9a; /* Başlık rengi */
+        }
+
+        /* Ana paragraf metinlerini sola hizalar */
+        .hakkimizda-metin-kutusu p,
+        .hakkimizda-metin-kutusu ul {
+            text-align: left; 
+            line-height: 1.6; /* Okunurluk için satır aralığı */
+            color: #333;
+            margin-bottom: 20px;
+            padding-left: 0; /* Liste başındaki boşluğu kaldırır */
+            list-style-position: inside; /* Liste işaretlerini içeri alır */
+        }
+        
+        /* Büyük ana başlık stili */
+        .hakkimizda-metin-kutusu h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center; /* Ana başlığı ortaya alır */
+        }
+
+        /* Paragraf içi başlıkları sola hizala */
+        .hakkimizda-metin-kutusu strong {
+            display: block;
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hakkimizda-metin-kutusu">
+        
+        <h1>Ararat Mimarlık | Geçmişten Geleceğe Uzanan Yapı Sanatı</h1>
+        
+        <p>Ararat Mimarlık olarak, mimarlık disiplininin sadece binalar tasarlayıp inşa etmekten ibaret olmadığının bilincindeyiz. Biz, her yapının bir hikayesi, bir ruhu olduğuna inanıyor; bu ruhu korumayı, geleceğe taşımayı ve yeni hikayeler yaratmayı kendimize misyon ediniyoruz. Köklü deneyimimiz, yenilikçi bakış açımız ve alanında uzman ekibimizle, restorasyon, yapım ve kapsamlı mimarlık hizmetlerini tek bir çatı altında, en yüksek kalite standartlarında sunuyoruz.</p>
+        
+        <h2>🏛️ Restorasyon Mimarisi: Mirası Koruma Sanatı</h2>
+        <p>Medeniyetlerin izlerini taşıyan tarihi yapıları korumak, sadece bir meslek değil, aynı zamanda kültürel bir sorumluluktur. Ararat Mimarlık, bu bilinçle hareket ederek, restorasyon mimarisi alanında hassasiyetle çalışmaktadır.</p>
+        
+        <ul>
+            <li><strong>Tarihi Değerin Keşfi:</strong> Yapının orijinal dokusunu, malzemesini ve mimari dilini derinlemesine araştırıyor, en doğru müdahale biçimini belirliyoruz.</li>
+            <li><strong>Koruma ve Yeniden Canlandırma:</strong> Geleneksel teknikleri modern bilimsel yöntemlerle birleştirerek, tarihi yapıların aslına uygun olarak restore edilmesini, statik güçlendirilmesini ve yeni işlevlere uygun hale getirilerek toplumsal yaşama yeniden kazandırılmasını sağlıyoruz.</li>
+            <li><strong>Sürdürülebilirlik:</strong> Restorasyon projelerimizde, yapının ömrünü uzatacak, çevresel etkileri minimize edecek sürdürülebilir çözümleri önceliyoruz.</li>
+        </ul>
+        
+        <h2>🏗️ Yapım Mimarisi: Geleceğin Yaşam Alanlarını İnşa Etmek</h2>
+        <p>Modern çağın ihtiyaçlarına cevap veren, estetik, fonksiyonel ve güvenli yapılar inşa etmek, yapım mimarisi alanındaki temel hedefimizdir. Anahtar teslim projelerimizle, tasarım aşamasından inşaatın tamamlanıp teslimine kadar tüm süreçleri profesyonelce yönetiyoruz.</p>
+        
+        <ul>
+            <li><strong>Tasarım Odaklı Yaklaşım:</strong> Konut, ticari, endüstriyel ve karma kullanımlı tüm projelerimizde, kullanıcı deneyimini merkeze alarak özgün ve çağdaş tasarımlar üretiyoruz.</li>
+            <li><strong>Kalite ve Güvenlik:</strong> Uluslararası standartlara uygun malzeme ve işçilik kalitesinden ödün vermiyor, depreme dayanıklı, uzun ömürlü ve enerji verimli yapılar inşa ediyoruz.</li>
+            <li><strong>Proje ve Şantiye Yönetimi:</strong> Şeffaf, planlı ve zamanında ilerleyen proje yönetimi süreçlerimizle, maliyet ve zaman çizelgesine tam uyum sağlıyoruz.</li>
+        </ul>
+
+        <h2>📐 Kapsamlı Mimarlık ve Danışmanlık Hizmetleri</h2>
+        <p>Ararat Mimarlık, projenin sadece iki ana dalı ile sınırlı kalmaz; yapının ömrü boyunca ihtiyaç duyulabilecek tüm mimari ve mühendislik çözümlerini sunar:</p>
+
+        <ul>
+            <li><strong>İç Mekân Tasarımı:</strong> Yaşam ve çalışma alanlarının ruhunu yansıtan, ergonomik ve estetik iç mekan çözümleri.</li>
+            <li><strong>Uygulama ve Detay Projeleri:</strong> Titizlikle hazırlanmış, inşaat sürecini hatasız yönetecek detay çözümlemeleri ve uygulama projeleri.</li>
+            <li><strong>İmar ve Ruhsat Süreçleri:</strong> Projelerin yasal mevzuatlara uygunluğunu sağlayarak, ruhsat ve izin süreçlerinin takibini ve sonuçlandırılmasını gerçekleştirme.</li>
+            <li><strong>Danışmanlık:</strong> Gayrimenkul geliştirme, fizibilite, yapı denetim ve teknik şartname hazırlama konularında uzman danışmanlık hizmetleri.</li>
+        </ul>
+        
+        <h2>🌟 Vizyonumuz ve Değerlerimiz</h2>
+        <p><strong>Vizyonumuz:</strong> Mimarlık ve restorasyon alanında, evrensel değerleri ve yerel kültürü harmanlayan, geleceğe ilham veren, kalıcı eserler bırakmak.</p>
+        <p><strong>Değerlerimiz:</strong> Etik ve sürdürülebilir yaklaşımlar benimseyerek, topluma ve çevreye duyarlı projeler geliştirmek ve mesleki ahlakı ön planda tutarak yol almak.</p>
+        
+        <ul>
+            <li><strong>Güvenilirlik:</strong> Tüm süreçlerimizde şeffaflık ve dürüstlük esastır.</li>
+            <li><strong>Kalite:</strong> Detaylara verdiğimiz önemle, beklentilerin üzerinde sonuçlar üretmek.</li>
+            <li><strong>Sürdürülebilirlik:</strong> İnsan ve doğa dostu, çevreye duyarlı çözümler geliştirmek.</li>
+        </ul>
+        
+        <p>Ararat Mimarlık, her projeyi bir sanat eseri titizliğiyle ele alır. Hayallerinizdeki yapıyı tasarlamak, tarihi bir eseri yeniden canlandırmak veya mevcut alanlarınızı dönüştürmek için; bizi arayın. Yapılarınızın geleceğini birlikte inşa edelim.</p>
+        
+    </div>
+
+</body>
+</html></section>
+
+<!-- Hizmetler -->
+<section id="hizmetler">
+    <h2>Hizmetler</h2>
+    <div class="hizmetler-grid">
+        <div><h3>Tasarım</h3><p>Modern ve fonksiyonel tasarımlar.</p></div>
+        <div><h3>Planlama</h3><p>Projelerinizi en iyi şekilde planlıyoruz.</p></div>
+        <div><h3>Uygulama</h3><p>Projelerinizi hayata geçiriyoruz.</p></div>
+    </div>
+</section>
+
+<!-- Projeler -->
+<section id="projeler">
+    <h2>Projeler</h2>
+    <div class="projeler-grid">
+        <div><h3>Proje 1</h3><p>Örnek proje açıklaması.</p></div>
+        <div><h3>Proje 2</h3><p>Örnek proje açıklaması.</p></div>
+        <div><h3>Proje 3</h3><p>Örnek proje açıklaması.</p></div>
+    </div>
+</section>
+
+<!-- İletişim -->
+<section id="iletisim">
+    <h2>İletişim</h2>
+    <p>WhatsApp ile ulaşmak için numaramıza tıklayın: <a href="https://wa.me/905454946376" target="_blank">+90 54 549 46 376</a></p>
+    
+    <h3>Copilot Mesajı Gönder</h3>
+    <form id="copilotForm">
+        <input type="text" id="isim" placeholder="Adınız" required>
+        <input type="text" id="iletisimBilgi" placeholder="Telefon veya E-posta" required>
+        <textarea id="mesaj" rows="5" placeholder="Mesajınız" required></textarea>
+        <input type="submit" value="Gönder">
+    </form>
+</section>
+
+<script>
+document.getElementById('copilotForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const isim = document.getElementById('isim').value;
+    const iletisim = document.getElementById('iletisimBilgi').value;
+    const mesaj = document.getElementById('mesaj').value;
+    alert(`Mesaj gönderildi!\n\nİsim: ${isim}\nİletişim: ${iletisim}\nMesaj: ${mesaj}`);
+    this.reset();
+});
+</script>
+ <div class="footer-wrap">
+		<div class="container" style="text-align:center">
+			<p><a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html ">ARARAT </a></p>
+			<p>
+				&copy; <span style="color:#FFCC00">Copyright 2025</span> <span style="color: #FFCC00;" class="heart">Ahmet Sarıboğa</span>  <a target="_blank" style="color:#FFCC00" href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html ">muhendislik Burada Sizi Bekliyor ! </a>
+			</p>
+			<p> <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/iletisim.html" target="_blank" style="color:#FFCC00">İletişim</a> | <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/iletisim.html" target="_blank" style="color:#FFCC00">Kurumsal</a> | <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html" target="_blank" style="color:#FFCC00">Yardım</a> | <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html" target="_blank" style="color:#FFCC00">Gizlilik Bildirimi</a> | <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html" target="_blank" style="color:#FFCC00">Yasal Uyarı</a> </p>
+
+
+			<p style="font-size:10px;color:#FFCC00">					<!--<li><a href="/anahtar-kelime/" target="_blank"></a></li>-->
+					<a style="color:#FFCC00" href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html" target="_blank"></a>
+							</p>
+
+
+		</div>
+	</div>
+
+</body>
+</html>
