@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ararat Mimarlık</title>
+<style>
+/* === GENEL AYARLAR === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Times New Roman", serif;
+}
+body {
+  background-color: #ca5858;
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* === MENÜ === */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #e50000;
+  padding: 10px 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  height: 45px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+/* Mobil menü butonu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.menu-toggle span {
+  background-color: #fff;
+  width: 25px;
+  height: 3px;
+  border-radius: 3px;
+}
+nav.active ul {
+  display: flex;
+  flex-direction: column;
+  background-color: #c40000;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  gap: 15px;
+  text-align: center;
+}
+
+/* === ANA SAYFA === */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+#anasayfa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(180deg, #7a788a, #5b5a66);
+}
+#anasayfa h1 {
+  font-size: 2.8em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+#anasayfa p {
+  font-size: 1.3em;
+  margin-bottom: 25px;
+}
+.btn {
+  background-color: #f00;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 5px;
+}
+.btn:hover {
+  background-color: #fff;
+  color: #f00;
+}
+
+/* === HAKKIMIZDA === */
+#hakkimizda {
+  background-color: #fff;
+  color: #333;
+}
+.hakkimizda-metin-kutusu {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+.hakkimizda-metin-kutusu h1 {
+  color: #c40000;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.hakkimizda-metin-kutusu h2 {
+  color: #e50000;
+  margin: 20px 0 10px;
+}
+.hakkimizda-metin-kutusu p, .hakkimizda-metin-kutusu ul {
+  text-align: left;
+  color: #333;
+}
+
+/* === HİZMETLER ve PROJELER === */
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+.hizmetler-grid, .projeler-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.hizmetler-grid div, .projeler-grid div {
+  background-color: #c40000;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 280px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.hizmetler-grid div:hover, .projeler-grid div:hover {
+  transform: translateY(-5px);
+}
+
+/* === İLETİŞİM === */
+#iletisim p a {
+  color: #ffd700;
+}
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+input[type="submit"] {
+  background-color: #f00;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #fff;
+  color: #f00;
+}
+
+/* === FOOTER === */
+.footer-wrap {
+  text-align: center;
+  padding: 20px;
+  background: #900;
+  color: #ffcc00;
+  font-size: 14px;
+}
+
+/* === KAYDIRMA BUTONLARI === */
+.scroll-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+.scroll-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.scroll-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* === MOBİL === */
+@media (max-width: 768px) {
+  nav ul { display: none; }
+  .menu-toggle { display: flex; }
+  #anasayfa h1 { font-size: 2.2em; }
+  #anasayfa p { font-size: 1em; }
+  .btn { font-size: 0.9em; padding: 10px 20px; }
+  .hizmetler-grid div, .projeler-grid div { flex: 1 1 100%; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- === MENÜ === -->
+<nav>
+  <img src="araratlogo.jpg" alt="Ararat Mimarlık Logo">
+  <div class="menu-toggle" id="menuBtn">
+    <span></span><span></span><span></span>
+  </div>
+  <ul>
+    <li><a href="#anasayfa">Ana Sayfa</a></li>
+    <li><a href="#hakkimizda">Hakkımızda</a></li>
+    <li><a href="#hizmetler">Hizmetler</a></li>
+    <li><a href="#projeler">Projeler</a></li>
+    <li><a href="#iletisim">İletişim</a></li>
+  </ul>
+</nav>
+
+<!-- === ANA SAYFA === -->
+<section id="anasayfa">
+  <h1>Ararat Mimarlık</h1>
+  <p>Profesyonel Mimarlık Çözümleri</p>
+  <button class="btn" onclick="document.getElementById('hakkimizda').scrollIntoView({behavior:'smooth'})">Hakkımızda</button>
+  <button class="btn" onclick="document.getElementById('hizmetler').scrollIntoView({behavior:'smooth'})">Hizmetler</button>
+</section>
+
+<!-- === HAKKIMIZDA === -->
+<section id="hakkimizda">
+  <div class="hakkimizda-metin-kutusu">
+    <h1>Ararat Mimarlık | Geçmişten Geleceğe Uzanan Yapı Sanatı</h1>
+    <p>Ararat Mimarlık olarak, mimarlık disiplininin sadece binalar tasarlayıp inşa etmekten ibaret olmadığının bilincindeyiz...</p>
+  </div>
+</section>
+
+<!-- === HİZMETLER === -->
+<section id="hizmetler">
+  <h2>Hizmetler</h2>
+  <div class="hizmetler-grid">
+    <div><h3>Tasarım</h3><p>Modern ve fonksiyonel tasarımlar.</p></div>
+    <div><h3>Planlama</h3><p>Projelerinizi en iyi şekilde planlıyoruz.</p></div>
+    <div><h3>Uygulama</h3><p>Projelerinizi hayata geçiriyoruz.</p></div>
+  </div>
+</section>
+
+<!-- === PROJELER === -->
+<section id="projeler">
+  <h2>Projeler</h2>
+  <div class="projeler-grid">
+    <div><h3>Proje 1</h3><p>Örnek proje açıklaması.</p></div>
+    <div><h3>Proje 2</h3><p>Örnek proje açıklaması.</p></div>
+    <div><h3>Proje 3</h3><p>Örnek proje açıklaması.</p></div>
+  </div>
+</section>
+
+<!-- === İLETİŞİM === -->
+<section id="iletisim">
+  <h2>İletişim</h2>
+  <p>WhatsApp ile ulaşmak için numaramıza tıklayın: 
+    <a href="https://wa.me/905454946376" target="_blank">+90 54 549 46 376</a>
+  </p>
+  <h3>Copilot Mesajı Gönder</h3>
+  <form id="copilotForm">
+    <input type="text" id="isim" placeholder="Adınız" required>
+    <input type="text" id="iletisimBilgi" placeholder="Telefon veya E-posta" required>
+    <textarea id="mesaj" rows="5" placeholder="Mesajınız" required></textarea>
+    <input type="submit" value="Gönder">
+  </form>
+</section>
+
+<!-- === FOOTER === -->
+<div class="footer-wrap">
+  <p><a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html">ARARAT MİMARLIK</a></p>
+  <p>&copy; 2025 <span style="color:#FFCC00;">Ahmet Sarıboğa</span> | 
+    <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html" target="_blank" style="color:#FFCC00">Mühendislik Burada Sizi Bekliyor!</a>
+  </p>
+  <p>
+    <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/iletisim.html" target="_blank" style="color:#FFCC00">İletişim</a> |
+    <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/iletisim.html" target="_blank" style="color:#FFCC00">Kurumsal</a> |
+    <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html" target="_blank" style="color:#FFCC00">Yardım</a> |
+    <a href="https://jiyanmsi575-creator.github.io/erbenmuhendislik/index.html" target="_blank" style="color:#FFCC00">Gizlilik</a>
+  </p>
+</div>
+
+<!-- === KAYDIRMA BUTONLARI === -->
+<div class="scroll-buttons">
+  <button id="toTop">↑</button>
+  <button id="toBottom">↓</button>
+</div>
+
+<!-- === SCRIPT === -->
+<script>
+/* Form işlemi */
+document.getElementById('copilotForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const isim = document.getElementById('isim').value;
+  const iletisim = document.getElementById('iletisimBilgi').value;
+  const mesaj = document.getElementById('mesaj').value;
+  alert(`Mesaj gönderildi!\n\nİsim: ${isim}\nİletişim: ${iletisim}\nMesaj: ${mesaj}`);
+  this.reset();
+});
+
+/* Yukarı / Aşağı Kaydırma */
+document.getElementById('toTop').onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+document.getElementById('toBottom').onclick = () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+/* Mobil Menü */
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.querySelector('nav');
+menuBtn.onclick = () => nav.classList.toggle('active');
+</script>
+
+</body>
+</html>
